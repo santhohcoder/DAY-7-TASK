@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var req=new XMLHttpRequest();
+        req.open('GET','https://restcountries.com/v3.1/subregion/south')
+        req.send();
+        req.onload=function(){
+           var data= JSON.parse(req.response)
+           console.log(data)
+           data.forEach((element) => {
+            console.log(`Name of the country is   ${element.name.common}and the 
+            capital for that country is    ${element.capital}   and flag is   ${element.flag}`);
+
+            
+           });
+        }
+    </script>
+</body>
+</html>
